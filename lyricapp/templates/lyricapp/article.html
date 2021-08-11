@@ -1,0 +1,24 @@
+{% extends 'lyricsite/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<!-- content -->
+      <div id="content">
+        <div class="indent">
+          <h2>{{article.title}}</h2>
+          <div class="img-box1"><img src="{% static 'lyricapp/images/4page-img.jpg' %}" alt="" />
+            <p>
+                sss{{article.content|safe}}
+            </p>
+          </div>
+          <!--<p>-->
+              <!--{{article.content|safe}}-->
+          <!--</p>-->
+        </div>
+        <div class="inner_copy">More <a href="#">Website Templates</a> @ Templates.com!</div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

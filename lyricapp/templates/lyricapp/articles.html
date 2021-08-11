@@ -1,0 +1,19 @@
+{% extends 'lyricsite/base.html' %}
+{% load static %}
+{% block content %}
+<!-- content -->
+      <div id="content">
+        <div class="indent">
+          <h2>Article 1</h2>
+          <ul class="list p1">{% for article in articles %}
+            <li><img src="{% static 'lyricapp/images/3page-img1.jpg' %}" alt=""/><b>{{article.title}}</b> {{article.content|safe}}<br />
+              <a href="{% url 'article' article.slug %}">Read More &gt;&gt;</a></li>
+            {% endfor %}
+          </ul>
+          <div class="link"><a href="#">All Articles &gt;&gt;</a></div>
+        </div>
+        <div class="inner_copy">More <a href="#">Website music</a> @ Lyrics</div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
