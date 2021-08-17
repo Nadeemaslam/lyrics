@@ -50,7 +50,7 @@ ul {list-style:none}
 /* other */
 .img-box1 {width:100%;overflow:hidden;padding-bottom:12px}
 .img-box1 img {float:left;margin:0 20px 0 0}
-.img-box1 p {
+.img-box1 p, .list p {
 	font-size: 18px;
     font-weight: 400 !important;
     line-height: 30px;
@@ -87,7 +87,41 @@ h3 {font-size:25px}
     		line-height: 30px;
     		padding-bottom: 20px;
             }
+
+         #content .indent {padding:50px 50px 50px 50px !important;}
+
 }
+
+
+@media screen and (max-width: 500px)  {
+	.img-box1 p{
+            font-size: 18px;
+    		font-weight: 400 !important;
+    		line-height: 30px;
+    		padding-bottom: 20px;
+            }
+
+         #content .indent {padding:50px 50px 50px 50px !important;
+         }
+
+
+ }
+
+ #lyrics-content {
+ 	padding: 80px 80px 30px 80px;
+
+ }
+
+#lyrics-content p {
+	font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 50px;
+    padding-bottom: 20px;
+}
+
+
+
+
 
 
 

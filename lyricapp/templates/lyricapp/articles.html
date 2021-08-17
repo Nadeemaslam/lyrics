@@ -4,9 +4,11 @@
 <!-- content -->
       <div id="content">
         <div class="indent">
-          <h2>Article 1</h2>
+          <h2>Lyrics</h2>
           <ul class="list p1">{% for article in articles %}
-            <li><img src="{% static 'lyricapp/images/3page-img1.jpg' %}" alt=""/><b>{{article.title}}</b> {{article.content|safe}}<br />
+            <li><a href="{% url 'article' article.slug %}"><img src="{% static 'lyricapp/images/3page-img1.jpg' %}" alt=""/></a><b>
+              <a href="{%url 'article' article.slug %}">{{article.title}}</a>
+            </b> {{article.content|slice:":90"|safe}}<br />
               <a href="{% url 'article' article.slug %}">Read More &gt;&gt;</a></li>
             {% endfor %}
           </ul>
