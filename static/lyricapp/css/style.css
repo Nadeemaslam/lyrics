@@ -50,6 +50,12 @@ ul {list-style:none}
 /* other */
 .img-box1 {width:100%;overflow:hidden;padding-bottom:12px}
 .img-box1 img {float:left;margin:0 20px 0 0}
+.img-box1 p {
+	font-size: 14px;
+    font-weight: 400 !important;
+    line-height: 30px;
+}
+
 .p1 {margin-bottom:20px}
 /* txt, links, lines, titles */
 a {color:#c9710c;outline:none}
