@@ -89,6 +89,14 @@ h3 {font-size:25px}
             }
 
          #content .indent {padding:50px 50px 50px 50px !important;}
+         #lyrics-content p {
+				font-size: 28px;
+			    font-weight: 400 !important;
+			    line-height: 40px;
+			    padding-bottom: 20px;
+			    text-align: center;
+			    font-family: 'Klee One', cursive;
+			}
 
 }
 
@@ -103,6 +111,14 @@ h3 {font-size:25px}
 
          #content .indent {padding:50px 50px 50px 50px !important;
          }
+         #lyrics-content p {
+				font-size: 28px;
+			    font-weight: 400 !important;
+			    line-height: 40px;
+			    padding-bottom: 20px;
+			    text-align: center;
+			    font-family: 'Klee One', cursive;
+			}
 
 
  }
@@ -113,11 +129,12 @@ h3 {font-size:25px}
  }
 
 #lyrics-content p {
-	font-size: 16px;
+	font-size: 28px;
     font-weight: 400 !important;
-    line-height: 50px;
+    line-height: 30px;
     padding-bottom: 20px;
     text-align: center;
+    font-family: 'Klee One', cursive;
 }
 
 
