@@ -92,7 +92,7 @@ h3 {font-size:25px}
          #lyrics-content p {
 				font-size: 28px;
 			    font-weight: 400 !important;
-			    line-height: 40px;
+			    line-height: 40px !important;
 			    padding-bottom: 20px;
 			    text-align: center;
 			    font-family: 'Klee One', cursive;
@@ -114,7 +114,7 @@ h3 {font-size:25px}
          #lyrics-content p {
 				font-size: 28px;
 			    font-weight: 400 !important;
-			    line-height: 40px;
+			    line-height: 40px !important;
 			    padding-bottom: 20px;
 			    text-align: center;
 			    font-family: 'Klee One', cursive;
@@ -124,7 +124,7 @@ h3 {font-size:25px}
  }
 
  #lyrics-content {
- 	padding: 80px 80px 30px 80px;
+ 	padding: 80px 40px 30px 40px;
 
  }
 
@@ -137,8 +137,29 @@ h3 {font-size:25px}
     font-family: 'Klee One', cursive;
 }
 
+@media only screen and (max-width: 600px) {
+  #lyrics-content p {
+				font-size: 28px;
+			    font-weight: 400 !important;
+			    line-height: 40px !important;
+			    padding-bottom: 20px;
+			    text-align: center;
+			    font-family: 'Klee One', cursive;
+			}
+}
 
 
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  #lyrics-content p {
+				font-size: 28px;
+			    font-weight: 400 !important;
+			    line-height: 40px !important;
+			    padding-bottom: 20px;
+			    text-align: center;
+			    font-family: 'Klee One', cursive;
+			}
+}
 
 
 
