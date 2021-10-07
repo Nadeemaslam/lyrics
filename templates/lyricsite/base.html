@@ -1,63 +1,114 @@
 <!DOCTYPE html>
 
 {% load static %}
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html xml:lang="en" lang="en">
 <head>
-<title>Feel The Music</title>
+<title>LyricsFast</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="{% static 'lyricapp/css/style.css' %}" rel="stylesheet" type="text/css" />
-<script src="js/cufon-yui.js" type="text/javascript"></script>
-<script src="js/cufon-replace.js" type="text/javascript"></script>
-<script src="js/Bauhaus_Md_BT_400.font.js" type="text/javascript"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Klee+One&display=swap" rel="stylesheet">
 
-<!--[if lt IE 7]>
-<script type="text/javascript" src="js/ie_png.js"></script>
-<script type="text/javascript">ie_png.fix('.png');</script>
-<![endif]-->
+<!-- Font Awesome-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-<body id="page1">
-<div class="tail-cont">
-  <div class="tail-top-left"></div>
-  <div class="tail-top">
+  <body id="page1">
+    <section id="header">
+      <div class="container">
+          <div class="logo">
+              <a href="{% url 'index' %}"><i class="fa fa-music"></i></a> 
+          </div>
+          <div class="lg-menu links">
+              <ul>
+                  <li>
+                    <a href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'about' %}">About Us</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'articles' %}">Articles</a>
+                  </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="ham-bars">
+            <button onclick="menuToggle()"><i class="fa fa-bars"></i></button>
+        </div>
+      </div>
+      <div class="mobile-menu no-visibility">
+        <div class="mobile-menu links">
+            <ul>
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'about' %}">About Us</a>
+              </li>
+              <li>
+                <a href="{% url 'articles' %}">Articles</a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            </ul>
+        </div>
+      </div>
+
+  </section>
+
+
+      {% block content%}
+      {% endblock %}
+
+<!-- Footer-->
+
+  <section id="footer">
     <div class="container">
-      <!-- header -->
-      <div id="header">
-        <div class="logo"><a href="#"><img src="{% static 'lyricapp/images/logo.jpg' %}" alt="" /></a></div>
-        <ul class="nav">
-          <li><a href="{% url 'index' %}"><img src="{% static 'lyricapp/images/icon1.gif' %}" alt="" /></a></li>
-          <li><a href="{% url 'contact' %}"><img src="{% static 'lyricapp/images/icon2.gif' %}" alt="" /></a></li>
-          <li class="last"><a href="#"><img src="{% static 'lyricapp/images/icon3.gif' %}" alt="" /></a></li>
-        </ul>
-        <ul class="site-nav">
-          <li><a href="{% url 'index' %}" class="act">Home</a></li>
-          <li><a href="{% url 'about' %}">About Us</a></li>
-          <li><a href="{% url 'articles' %}">Articles</a></li>
-          <li><a href="{% url 'contact' %}">Contact Us</a></li>
-          <li class="last">
-            <form class="" action="{% url 'search' %}" method="POST">
-              {% csrf_token %}
-              <input class="form-control" placeholder="search lyrics" name="searched">
-              <button type="submit" class="btn btn-warning btn-outline-secondary">Search</button>
-            </form>
+      <div class="info">
+        <div>
+          <h4>
+            Follow us on 
+          </h4>
+          <br>
+          <i class="fa fa-facebook"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-youtube-play"></i>
+        </div>
+        <div>
+          <h4>
+            Site Map
+          </h4>
+          <ul>
+            <li>
+              <a href="{% url 'index' %}">Home</a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}">About Us</a>
+            </li>
+            <li>
+              <a href="{% url 'articles' %}">Articles</a>
+            </li>
+            <li>
+              <a href="{% url 'contact' %}">Contact Us</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+      <div class="team-info">
+        <ul>
+          <li>
+            <p> Developed by: Etimes</p>
+          </li>
+          <li>
+              <p>Designed by Nadeem </p>
           </li>
         </ul>
       </div>
-      {% block content%}
-      {% endblock %}
-    <!-- footer -->
-    <div id="footer">
-      <div class="container">
-        <div class="indent">
-          <div class="fleft">Copyright - Etimesmedia</div>
-          <div class="fright">Designed by: <a href="#"><img alt="" src="images/templates-logo.gif" /></a>&nbsp; <a href="www.linkedin.com/in/nadeem-aslam-aa974351">Nadeem Aslam</a> </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-<script type="text/javascript"> Cufon.now(); </script>
+  </section>  
+  <script src = "{% static 'lyricapp/js/main.js' %}" type="text/javascript"></script>
 </body>
 </html>
