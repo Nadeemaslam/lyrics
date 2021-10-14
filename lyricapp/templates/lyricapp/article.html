@@ -4,18 +4,36 @@
 
 
 <!-- content -->
-      <div id="lyrics-content" class="row">
-        <div class="indent">
-          <h2>{{article.title}}</h2>
-          <!-- <div class="img-box1"><img src="{% static 'lyricapp/images/4page-img.jpg' %}" alt="" /> -->
-            <p>
-                {{article.content|safe}}
-            </p>
-          </div>
-        </div>
-      
+
+<section id="article">
+  <div class="container">
+    <div class="title-box">
+      <h2>
+        {{article.title}}
+        <hr>
+      </h2>
+    </div>
+    <div class="content">
+      <div>
+          <h3>
+            Lyrics:
+          </h3>
+          <br>
+        <p>
+          {{article.content|safe}}
+        </p>
       </div>
+      <br>
+      <hr>
+    </div>
+    <div class="youtube">
+      <iframe src="https://www.youtube.com/embed/?v=x1hw8xW4pgo controls=1" frameborder="1"></iframe>
     </div>
   </div>
+  
+
+
+</section>
+
 
 {% endblock %}

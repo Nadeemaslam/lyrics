@@ -1,11 +1,111 @@
 {% extends 'lyricsite/base.html' %}
 {% block content %}
-<!-- content 
-<section id="banner">
-  <div class="background">
-    <div>
+
+
+<!-- Landing page-->
+
+<section id="home">
+  <div class="container">
+    <div class="info">
+      <h1>
+        Lyrics Fast
+      </h1>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium, totam rem aperiam, eaque
+        ipsa quae ab illo inventore veritatis et quasi architecto
+        beatae vitae dicta sunt explicabo. Nemo enim ipsam
+        voluptatem quia voluptas sit aspernatur aut odit aut fugit
+        , sed quia
+      </p>
       
+      
+      
+      <div class="site-search">
+        <form class="" action="{% url 'search' %}" method="POST">
+          {% csrf_token %}
+          <input class="form-control search-bar" placeholder="Search lyrics...." name="searched">
+          <button type="submit" class="btn btn-warning btn-outline-secondary"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
     </div>
   </div>
-</section>-->
+  
+
+</section>
+
+<section id="latest">
+  <div class="container">
+    <div class="title-box">
+      <h2>
+        Recently Added Lyrics
+      </h>
+      <hr>
+    </div>
+
+    <div class="card-container">
+
+      {% for article in articles %}
+
+      <a href="{% url 'article' article.slug %}">
+        <div class="card">
+          <h3>
+            {{ article.title }}
+          </h3>
+          <h4>
+            Singer: XYZ
+          </h4>
+        </div>
+      </a>
+
+      {% endfor %}
+
+
+<!--
+    <a href="#">
+      <div class="card">
+        <h3>
+         Song Name One
+        </h>
+        <h4>
+          Singer: XYZ
+        </h>
+      </div>
+    </a>
+    <a href="#">
+      <div class="card">
+        <h3>
+         Song Name One
+        </h>
+        <h4>
+          Singer: XYZ
+        </h>
+      </div>
+    </a>
+    <a href="#">
+      <div class="card">
+        <h3>
+         Song Name One
+        </h>
+        <h4>
+          Singer: XYZ
+        </h>
+      </div>
+    </a>
+    -->
+
+    </div>
+
+    <div>
+      <button class="btn" href="#"> Discover More</button>
+    </div>
+
+  </div>
+    
+
+</section>
+
+
+
+
 {% endblock %}

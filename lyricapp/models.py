@@ -20,7 +20,6 @@ class Articles(models.Model):
     description = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    featured_image = models.FileField(default=None, null=True, storage=blogimage)
 
     class Meta:
         ordering = ['-created_on']

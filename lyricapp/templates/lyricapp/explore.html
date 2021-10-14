@@ -1,0 +1,68 @@
+{% extends 'lyricsite/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- content -->
+
+
+<section id="discover">
+  <div class="container">
+    <div>
+      <h1>
+        Latest Songs
+        <hr>
+      </h1>
+    </div>
+
+    <div class="card-container">
+
+      {% for article in articles %}
+      <a href="{% url 'article' article.slug %}">
+        <div class="card">
+          <h3>
+              {{ article.title }}
+            </h>
+            <h4>
+              Singer: XYZ
+              </h>
+        </div>
+      </a>
+      {% endfor %}
+
+
+    </div>
+  </div>
+
+</section>
+
+
+<section id="song-dump">
+  <div class="container">
+    <div>
+      <h1>
+        All Songs
+        <hr>
+      </h1>
+    </div>
+    <div class="category-list">
+      <ul class="list">{% for article in articles %}
+        <li class="item"><b>
+            <a href="{%url 'article' article.slug %}"><h3>{{article.title}}</h3></a>
+            <h4>Singer</h4>
+          </b> {{article.content|slice:":100"|safe}}<br />
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+
+  </div>
+
+
+
+
+</section>
+
+
+
+{% endblock %}

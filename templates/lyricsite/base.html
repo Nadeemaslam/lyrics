@@ -10,6 +10,8 @@
 <!-- Font Awesome-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
 </head>
   <body id="page1">
     <section id="header">
@@ -23,14 +25,9 @@
                     <a href="{% url 'index' %}">Home</a>
                   </li>
                   <li>
-                    <a href="{% url 'about' %}">About Us</a>
+                    <a href="{% url 'explore' %}">Explore</a>
                   </li>
-                  <li>
-                    <a href="{% url 'articles' %}">Articles</a>
-                  </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contact Us</a>
-                </li>
+                  
             </ul>
         </div>
         <div class="ham-bars">
@@ -44,14 +41,9 @@
                 <a href="{% url 'index' %}">Home</a>
               </li>
               <li>
-                <a href="{% url 'about' %}">About Us</a>
+                <a href="{% url 'explore' %}">Explore</a>
               </li>
-              <li>
-                <a href="{% url 'articles' %}">Articles</a>
-              </li>
-              <li>
-                <a href="{% url 'contact' %}">Contact Us</a>
-            </li>
+              
             </ul>
         </div>
       </div>
@@ -63,7 +55,6 @@
       {% endblock %}
 
 <!-- Footer-->
-
   <section id="footer">
     <div class="container">
       <div class="info">
@@ -72,10 +63,11 @@
             Follow us on 
           </h4>
           <br>
-          <i class="fa fa-facebook"></i>
-          <i class="fa fa-instagram"></i>
-          <i class="fa fa-twitter"></i>
-          <i class="fa fa-youtube-play"></i>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-youtube-play"></i></a>
+          
         </div>
         <div>
           <h4>
@@ -86,14 +78,8 @@
               <a href="{% url 'index' %}">Home</a>
             </li>
             <li>
-              <a href="{% url 'about' %}">About Us</a>
+              <a href="{% url 'explore' %}">Explore</a>
             </li>
-            <li>
-              <a href="{% url 'articles' %}">Articles</a>
-            </li>
-            <li>
-              <a href="{% url 'contact' %}">Contact Us</a>
-          </li>
           </ul>
         </div>
       </div>
@@ -108,7 +94,7 @@
         </ul>
       </div>
     </div>
-  </section>  
+  </section>
   <script src = "{% static 'lyricapp/js/main.js' %}" type="text/javascript"></script>
 </body>
 </html>
