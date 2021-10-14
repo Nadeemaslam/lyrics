@@ -88,12 +88,18 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'lyrics',
-            'USER': '',
-            'PASSWORD': '',
+            'USER': 'admin',
+            'PASSWORD': 'root',
             'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
     }
+
+
+
+
+
+
 
 
 # Password validation
