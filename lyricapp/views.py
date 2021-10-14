@@ -8,7 +8,9 @@ from .models import Articles
 
 
 def index(request):
-    return render(request, template_name='lyricapp/index.html')
+    recentposts = Articles.objects.filter(status=1).order_by('-created_on')[:4]
+    context = {'articles': recentposts}
+    return render(request, 'lyricapp/index.html', context)
 
 def articles(request):
     articles = Articles.objects.filter(status=1).order_by('-created_on')[:10]
@@ -31,15 +33,17 @@ def search_results(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
         articles = Articles.objects.filter(Q(title__contains=searched) | Q(content__contains=searched))
-        print(articles,"sllslsllslslsl")
+        print(articles, "sllslsllslslsl")
         context = {'articles': articles}
         return render(request, 'lyricapp/searchresults.html', context)
     else:
         return render(request, template_name='lyricapp/searchresults.html')
 
 
-def about(request):
-    return render(request, template_name='lyricapp/about.html')
+def explore(request):
+    recentposts = Articles.objects.filter(status=1).order_by('-created_on')[:4]
+    context = {'articles': recentposts}
+    return render(request, 'lyricapp/explore.html', context)
 
 
 def contact(request):

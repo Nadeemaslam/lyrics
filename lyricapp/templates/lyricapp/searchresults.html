@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 <!-- content -->
-      <div id="content">
+<!--
+    <div id="content">
         <div class="indent">
           <h2>Article 1</h2>
           <ul class="list p1">{% for article in articles %}
@@ -14,6 +15,32 @@
         </div>
         <div class="inner_copy">More <a href="#">Website music</a> @ Lyrics</div>
       </div>
+      -->
+
+<section id="search">
+  <div class="container">
+    <div class="title-box">
+      <h2>
+        Search Results
+        <hr>
+      </h2>
     </div>
+    <div class="content">
+      {% for result in articles %}
+      <div class="result">
+        <a href="{% url 'article' result.slug %}"> <h3> {{result.title}} </h3></a>
+        <p>
+          Singer
+        </p>
+      </div>
+      {% endfor %}
+      <div class="button">
+        <a href="{% url 'explore' %}"> All Lyrics</a>
+      </div>
+    </div>
+
   </div>
+</section>
+
+
 {% endblock %}
