@@ -41,7 +41,7 @@ def search_results(request):
 
 
 def explore(request):
-    recentposts = Articles.objects.filter(status=1).order_by('-created_on')[:4]
+    recentposts = Articles.objects.filter(status=1).order_by('-created_on')
     page = request.GET.get('page', 1)
 
     paginator = Paginator(recentposts, 4)
