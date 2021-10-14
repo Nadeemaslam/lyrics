@@ -27,7 +27,7 @@ DEBUG = False
 
 
 
-# Application definition
+# Application definitionx
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -87,9 +87,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'lyricsdb',
-            'USER': 'admin',
-            'PASSWORD': 'root@123',
+            'NAME': 'lyrics',
+            'USER': '',
+            'PASSWORD': '',
             'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
             'PORT': '3306',
         }
