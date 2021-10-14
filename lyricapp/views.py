@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.core.exceptions import ObjectDoesNotExist
 from .models import Articles
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def index(request):
@@ -33,7 +34,6 @@ def search_results(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
         articles = Articles.objects.filter(Q(title__contains=searched) | Q(content__contains=searched))
-        print(articles, "sllslsllslslsl")
         context = {'articles': articles}
         return render(request, 'lyricapp/searchresults.html', context)
     else:
@@ -42,6 +42,15 @@ def search_results(request):
 
 def explore(request):
     recentposts = Articles.objects.filter(status=1).order_by('-created_on')[:4]
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(recentposts, 4)
+    try:
+        recentposts = paginator.page(page)
+    except PageNotAnInteger:
+        recentposts = paginator.page(1)
+    except EmptyPage:
+        recentposts = paginator.page(paginator.num_pages)
     context = {'articles': recentposts}
     return render(request, 'lyricapp/explore.html', context)
 
