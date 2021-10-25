@@ -1,0 +1,35 @@
+<section id="header-solid">
+      <div class="container">
+          <div class="logo">
+              <a href="{% url 'index' %}"><i class="fa fa-music"></i></a>
+          </div>
+          <div class="lg-menu links">
+              <ul>
+                  <li>
+                    <a href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'explore' %}">Explore</a>
+                  </li>
+
+            </ul>
+        </div>
+        <div class="ham-bars">
+            <button onclick="menuToggle()"><i class="fa fa-bars"></i></button>
+        </div>
+      </div>
+      <div class="mobile-menu no-visibility">
+        <div class="mobile-menu links">
+            <ul>
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li>
+                <a href="{% url 'explore' %}">Explore</a>
+              </li>
+
+            </ul>
+        </div>
+      </div>
+
+  </section>
