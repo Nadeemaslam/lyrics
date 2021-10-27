@@ -2,21 +2,8 @@
 {% load static %}
 {% block content %}
 <!-- content -->
-<!--
-    <div id="content">
-        <div class="indent">
-          <h2>Article 1</h2>
-          <ul class="list p1">{% for article in articles %}
-            <li><img src="{% static 'lyricapp/images/3page-img1.jpg' %}" alt=""/><b>{{article.title}}</b>{{article.content|slice:":104"|safe}}<br />
-              <a href="{% url 'article' article.slug %}">Read More &gt;&gt;</a></li>
-            {% endfor %}
-          </ul>
-          <div class="link"><a href="#">All Articles &gt;&gt;</a></div>
-        </div>
-        <div class="inner_copy">More <a href="#">Website music</a> @ Lyrics</div>
-      </div>
-      -->
 
+{% include "lyricsite/nav-bar-solid.html" %}
 <section id="search">
   <div class="container">
     <div class="title-box">
@@ -26,17 +13,41 @@
       </h2>
     </div>
     <div class="content">
-      {% for result in articles %}
-      <div class="result">
-        <a href="{% url 'article' result.slug %}"> <h3> {{result.title}} </h3></a>
-        <p>
-          Singer
-        </p>
+      <div class="results">
+        <ul class="list">
+          {% for result in articles %}
+          <a href="{%url 'article' result.slug %}">
+            <li class="item"><b>
+                <h3> {{result.title}} </h3>
+                <h3> {{result.singer}} </h3>
+                <hr>
+                <p> {{result.content|safe|truncatewords:30}} </p>
+
+            </li>
+          </a>
+          {% endfor %}
+        </ul>
       </div>
-      {% endfor %}
-      <div class="button">
-        <a href="{% url 'explore' %}"> All Lyrics</a>
+      <div class="result-related">
+        <h4>Find More</h4>
+        {% for article in discover %}
+        <ul>
+          <li>
+            <a href="{% url 'article' article.slug %}">
+              <p>
+                {{ article.title }}
+              </p>
+              <p>
+                {{ article.singer }}
+              </p>
+            </a>
+          </li>
+        </ul>
+        {% endfor %}
       </div>
+    </div>
+    <div class="discover-btn">
+      <a href="{% url 'explore' %}"><button> All Lyrics</button> </a>
     </div>
 
   </div>

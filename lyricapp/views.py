@@ -34,16 +34,20 @@ def search_results(request):
     if request.method == 'POST':
         searched = request.POST.get('searched')
         articles = Articles.objects.filter(Q(title__contains=searched) | Q(content__contains=searched))
-        context = {'articles': articles}
+        discover = Articles.objects.filter(status=1).order_by('-created_on')[:4]
+        context = {'articles': articles,
+                   'discover': discover
+                   }
         return render(request, 'lyricapp/searchresults.html', context)
     else:
-        return render(request, template_name='lyricapp/searchresults.html')
+        return render(request, 'lyricapp/searchresults.html')
 
 
 def explore(request):
     recentposts = Articles.objects.filter(status=1).order_by('-created_on')
     page = request.GET.get('page', 1)
 
+    ltpos = Articles.objects.filter(status=1).order_by('-created_on')[:4]
     paginator = Paginator(recentposts, 4)
     try:
         recentposts = paginator.page(page)
@@ -51,7 +55,9 @@ def explore(request):
         recentposts = paginator.page(1)
     except EmptyPage:
         recentposts = paginator.page(paginator.num_pages)
-    context = {'articles': recentposts}
+    context = {'articles': recentposts,
+               'ltpos': ltpos}
+
     return render(request, 'lyricapp/explore.html', context)
 
 

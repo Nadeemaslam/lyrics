@@ -16,6 +16,7 @@ class Articles(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     updated_on = models.DateTimeField(auto_now=True)
+    singer = models.CharField(max_length=200, default="Unknown")
     content = RichTextField()
     description = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)

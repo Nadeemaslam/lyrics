@@ -3,6 +3,7 @@
 
 
 <!-- Landing page-->
+{% include "lyricsite/nav-bar-transparent.html" %}
 
 <section id="home">
   <div class="container">
@@ -39,7 +40,7 @@
     <div class="title-box">
       <h2>
         Recently Added Lyrics
-      </h>
+      </h2>
       <hr>
     </div>
 
@@ -53,7 +54,7 @@
             {{ article.title }}
           </h3>
           <h4>
-            Singer: XYZ
+            {{ article.singer }}
           </h4>
         </div>
       </a>
@@ -61,43 +62,11 @@
       {% endfor %}
 
 
-<!--
-    <a href="#">
-      <div class="card">
-        <h3>
-         Song Name One
-        </h>
-        <h4>
-          Singer: XYZ
-        </h>
-      </div>
-    </a>
-    <a href="#">
-      <div class="card">
-        <h3>
-         Song Name One
-        </h>
-        <h4>
-          Singer: XYZ
-        </h>
-      </div>
-    </a>
-    <a href="#">
-      <div class="card">
-        <h3>
-         Song Name One
-        </h>
-        <h4>
-          Singer: XYZ
-        </h>
-      </div>
-    </a>
-    -->
-
     </div>
 
     <div>
-      <button class="btn" href="#"> Discover More</button>
+
+      <a href="{% url 'explore' %}"> <button class="btn"> Discover More</button></a>
     </div>
 
   </div>
